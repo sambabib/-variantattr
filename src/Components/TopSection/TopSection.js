@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import './TopSection.scss';
 
