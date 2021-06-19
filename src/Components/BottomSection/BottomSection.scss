@@ -1,0 +1,80 @@
+.bottom-section {
+  margin: 2rem;
+  padding: 1rem;
+
+  p {
+    font-size: 12px;
+    margin-bottom: 3rem;
+  }
+
+  .variants-table {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    position: relative;
+    margin-left: 3rem;
+
+    h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .variants-table-item {
+      h3 {
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      input {
+        padding: 0.4rem;
+        border: 1px solid gray;
+        outline: none;
+        width: 150px;
+        border-radius: 6px;
+      }
+    }
+
+    .checkbox-icon {
+      position: absolute;
+      left: -50px;
+      top: 35px;
+      border-color: #fff;
+    }
+
+    .more-button {
+      position: absolute;
+      top: 26px;
+      left: 1300px;
+      padding: 0.6rem;
+      background: rgb(136, 6, 187);
+      color: #fff;
+      border-radius: 6px;
+      outline: none;
+      border: none;
+    }
+
+    .closeout-icon {
+      position: absolute;
+      top: 32px;
+      left: 1380px;
+      background: #111;
+      color: #fff;
+      border-radius: 6px;
+      outline: none;
+      border: none;
+    }
+  }
+}
+.create-button {
+  padding: .5rem 1rem;
+  margin-top: 2rem;
+  background: rgb(136, 6, 187);
+  color: #fff;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+}
