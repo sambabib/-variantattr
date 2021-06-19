@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import InputBar from '../InputBar/InputBar';
 import OptionsBar from '../OptionsBar/OptionsBar';
 import './TopSection.scss';
@@ -13,34 +14,52 @@ const attributes = [
 ];
 
 const TopSection = () => {
-  const [showNewAttribute, setShowNewAttribute] = useState('')
-  
+  const [showNewAttribute, setShowNewAttribute] = useState('');
+
   const handleNewAttribute = (id) => {
     const newAttribute = [
       ...attributes,
       attributes.push({
-        id: attributes.length + 1
+        id: attributes.length + 1,
       }),
     ];
-    setShowNewAttribute(newAttribute)  
+    setShowNewAttribute(newAttribute);
     console.log(showNewAttribute);
   };
-  
+
   return (
     <div className='top-section'>
       <h2>Attributes and Options</h2>
       <div className='attributes-options'>
-        <div className='attributes-options-left'>
-          <h3>Attribute Name</h3>
-          {attributes.map((item) => {
-            return (
-              <div className='attributes-options-items'>
-                <InputBar key={item.id} />
+        <DragDropContext>
+          <Droppable droppableId='attributes-dnd'>
+            {(provided) => (
+              <div
+                className='attributes-options-left'
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                <h3>Attribute Name</h3>
+                {attributes.map((item) => {
+                  return (
+                    <Draggable key={item.id} draggableId={item.id}>
+                      {(provided) => (
+                        <div
+                          className='attributes-options-items'
+                          {...provided.draggableProps}
+                          {...provided.draggableProps}
+                          ref={provided.innerRef}
+                        >
+                          <InputBar key={item.id} />
+                        </div>
+                      )}
+                    </Draggable>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
-
+            )}
+          </Droppable>
+        </DragDropContext>
         <div className='attributes-options-right'>
           <h3>Options</h3>
           {attributes.map((item) => {
