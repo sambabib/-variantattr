@@ -1,0 +1,21 @@
+.options-bar-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 500px;
+}
+
+.options-text-bar {
+  padding: 0.5rem 0;
+  border: none;
+  outline: none;
+  width: inherit !important;
+  margin: 1rem 0;
+}
+
+.closeout-icon {
+  background: rgb(136, 6, 187);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 18px;
+}
